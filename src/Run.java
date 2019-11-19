@@ -6,8 +6,8 @@ public class Run {
         //    ułamków.
 
         Fraction sumFraction = new Fraction(1, 1);
-        Fraction fraction = new Fraction(1, 2);
-        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction = new Fraction(2, 8);
+        Fraction fraction1 = new Fraction(1, 8);
         sumFraction = Fraction.add(fraction, fraction1);
         System.out.println(fraction.getNumerator()+"   "+fraction1.getNumerator()+"   "+sumFraction.getNumerator());
         System.out.println("- + - = -");
