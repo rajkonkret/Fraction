@@ -9,6 +9,8 @@ public class Run {
         Fraction fraction = new Fraction(1, 2);
         Fraction fraction1 = new Fraction(1, 2);
         sumFraction = Fraction.add(fraction, fraction1);
-        System.out.println(sumFraction.getNumerator() + "/" + sumFraction.getDenominator());
+        System.out.println(fraction.getNumerator()+"   "+fraction1.getNumerator()+"   "+sumFraction.getNumerator());
+        System.out.println("- + - = -");
+        System.out.println(fraction.getDenominator()+"   "+fraction1.getDenominator()+"   "+sumFraction.getDenominator());
     }
 }
