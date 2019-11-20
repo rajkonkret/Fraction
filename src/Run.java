@@ -1,3 +1,4 @@
+import sun.text.UCompactIntArray;
 import javax.swing.*;
 
 public class Run {
@@ -7,7 +8,8 @@ public class Run {
         //    Zdefiniuj klasę Calculator i metody odpowiedzialne za dodawanie,odejmowanie
         //    ułamków.
         MyFrame window = new MyFrame();
-
+        window.removeAll();
+        MyFrame window1 = new MyFrame();
         Fraction sumFraction = new Fraction(1, 1);
         Fraction fraction = new Fraction(2, 8);
         Fraction fraction1 = new Fraction(1, 8);
