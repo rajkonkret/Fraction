@@ -15,6 +15,8 @@ public class Component1 {
         JTextField denumerator = new JTextField("mianownik");
         this.numerous1 = numerous1;
         this.denumerator1 = denumerator;
+        numerous1.setHorizontalAlignment(0);
+        denumerator.setHorizontalAlignment(0);
         JLabel labelOfMinus = new JLabel("------------------------");
         numerous1.setText(String.valueOf(this.numerous));
         denumerator.setText(String.valueOf(this.denumerator));
