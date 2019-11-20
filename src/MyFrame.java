@@ -1,9 +1,9 @@
 import javax.swing.*;
 
 public class MyFrame extends JFrame {
-    Component1 component;
-    Component1 component1;
-    Component1 result;
+    private Component1 component;
+    private Component1 component1;
+    private Component1 result;
 
     public MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
