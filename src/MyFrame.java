@@ -34,6 +34,7 @@ public class MyFrame extends JFrame {
     public void setComponent1(Fraction fraction) {
         component1.setFraction(fraction);
     }
+
     public void setResult(Fraction fraction) {
         result.setFraction(fraction);
     }
