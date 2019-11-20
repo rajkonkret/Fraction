@@ -16,7 +16,7 @@ public class Run {
         Fraction fraction3 = new Fraction(4, 8);
         window.setComponent(fraction3);
         window.setComponent1(fraction);
-        sumFraction =calculator.add(fraction3, fraction);
+        sumFraction =calculator.sub(fraction3, fraction);
         window.setResult(sumFraction);
 
 
