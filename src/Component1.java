@@ -5,7 +5,8 @@ import javax.swing.*;
 public class Component1 {
     private int numerous;
     private int denumerator;
-    JTextField numerous1;
+    private JTextField numerous1;
+    private JTextField denumerator1;
 
     public Component1(JPanel panel, int x) {
         this.numerous = 1;
@@ -13,6 +14,7 @@ public class Component1 {
         JTextField numerous1 = new JTextField("licznik");
         JTextField denumerator = new JTextField("mianownik");
         this.numerous1 = numerous1;
+        this.denumerator1 = denumerator;
         JLabel labelOfMinus = new JLabel("------------------------");
         numerous1.setText(String.valueOf(this.numerous));
         denumerator.setText(String.valueOf(this.denumerator));
@@ -36,6 +38,7 @@ public class Component1 {
         this.denumerator = fraction.getDenominator();
         this.numerous = fraction.getNumerator();
         this.numerous1.setText(String.valueOf(this.numerous));
+        this.denumerator1.setText(String.valueOf(this.denumerator));
     }
 }
 

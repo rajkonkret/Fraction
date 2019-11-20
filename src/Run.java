@@ -12,8 +12,12 @@ public class Run {
         System.out.println(fraction.getNumerator() + "   " + fraction1.getNumerator() + "   " + sumFraction.getNumerator());
         System.out.println("- + - = -");
         System.out.println(fraction.getDenominator() + "   " + fraction1.getDenominator() + "   " + sumFraction.getDenominator());
-        Fraction fraction3 = new Fraction(2, 2);
-        window.setComponent6(fraction3);
+        Fraction fraction3 = new Fraction(4, 8);
+        window.setComponent(fraction3);
+        window.setComponent1(fraction);
+        sumFraction = Fraction.add(fraction3,fraction);
+        window.setResult(sumFraction);
+
         //window.component6.setFraction(fraction3);
     }
 }
