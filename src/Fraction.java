@@ -18,12 +18,11 @@ public class Fraction {
         return add;
     }
 
-    public int getNumerator()
-    {
+    public int getNumerator() {
         return numerator;
     }
-    public int getDenominator()
-    {
+
+    public int getDenominator() {
         return denominator;
     }
 }

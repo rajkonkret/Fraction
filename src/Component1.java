@@ -2,20 +2,22 @@ import org.omg.CORBA.portable.IDLEntity;
 
 import javax.swing.*;
 
-public class Component {
+public class Component1 {
     private int numerous;
     private int denumerator;
+    JTextField numerous1;
 
-    public Component(JPanel panel, int x) {
+    public Component1(JPanel panel, int x) {
         this.numerous = 1;
         this.denumerator = 1;
-        JTextField numerous = new JTextField("licznik");
+        JTextField numerous1 = new JTextField("licznik");
         JTextField denumerator = new JTextField("mianownik");
+        this.numerous1 = numerous1;
         JLabel labelOfMinus = new JLabel("------------------------");
-        numerous.setText(String.valueOf(this.numerous));
+        numerous1.setText(String.valueOf(this.numerous));
         denumerator.setText(String.valueOf(this.denumerator));
-        numerous.setBounds(x, 10, 100, 25);
-        panel.add(numerous);
+        numerous1.setBounds(x, 10, 100, 25);
+        panel.add(numerous1);
         labelOfMinus.setBounds(x, 25, 100, 25);
         panel.add(labelOfMinus);
         denumerator.setBounds(x, 45, 100, 25);
@@ -31,8 +33,9 @@ public class Component {
     }
 
     public void setFraction(Fraction fraction) {
-        denumerator = fraction.getDenominator();
-        numerous = fraction.getNumerator();
+        this.denumerator = fraction.getDenominator();
+        this.numerous = fraction.getNumerator();
+        this.numerous1.setText(String.valueOf(this.numerous));
     }
 }
 
