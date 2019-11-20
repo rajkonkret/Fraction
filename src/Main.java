@@ -1,4 +1,4 @@
-public class Run {
+public class Main {
 
     public static void main(String[] args) {
         //    Zdefiniuj klasę Fraction , która odpowiada za reprezentacje ułamków.
@@ -16,10 +16,9 @@ public class Run {
         Fraction fraction3 = new Fraction(4, 8);
         window.setComponent(fraction3);
         window.setComponent1(fraction);
-        sumFraction =calculator.sub(fraction3, fraction);
+        sumFraction = calculator.sub(fraction3, fraction);
         window.setResult(sumFraction);
 
 
-        //window.component6.setFraction(fraction3);
     }
 }

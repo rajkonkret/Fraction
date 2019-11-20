@@ -21,9 +21,7 @@ public class MyFrame extends JFrame {
         Component1 result = new Component1(panel, 350);
         this.result = result;
         setVisible(true);
-//        Fraction fraction = new Fraction(2, 2);
-//        component.setFraction(fraction);
-        //panel.repaint();
+
 
     }
 
