@@ -11,15 +11,23 @@ public class MyFrame extends JFrame {
         setBounds(40, 40, 620, 460);
         JPanel panel = new JPanel();
         JButton bResult = new JButton();
+        JButton bOperation = new JButton();
         panel.setLayout(null);
         panel.setBounds(10, 10, 125, 100);
         add(panel);
         Component1 component = new Component1(panel, 10);
         this.component = component;
-        Component1 component1 = new Component1(panel, 150);
+        Component1 component1 = new Component1(panel, 170);
         this.component1 = component1;
         Component1 result = new Component1(panel, 350);
         this.result = result;
+        bOperation.setBounds(120,25,40,25);
+        bOperation.setText("*");
+        panel.add(bOperation);
+        bResult.setBounds(285,25,50,25);
+        bResult.setText(" = ");
+        panel.add(bResult);
+
         setVisible(true);
 
 
