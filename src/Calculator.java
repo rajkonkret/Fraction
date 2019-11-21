@@ -13,7 +13,7 @@ public class Calculator {
         return add;
     }
 
-    public Fraction sub(Fraction first, Fraction second) {
+    public Fraction mul(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
