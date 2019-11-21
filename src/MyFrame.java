@@ -60,7 +60,7 @@ public class MyFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
+//        System.out.println(e.getActionCommand());
         Calculator calculator = new Calculator();
         if ("result".equals(e.getActionCommand())) {
             Fraction fractionresult = calculator.add(component.getFraction(), component1.getFraction());
