@@ -59,7 +59,7 @@ public class Component1 implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         Object source = evt.getSource();
         if (source == numerous1) {
-            System.out.println("ok");
+            //System.out.println("ok");
         }
     }
 
