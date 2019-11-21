@@ -48,10 +48,12 @@ public class MyFrame extends JFrame implements ActionListener {
     }
 
     public void setComponent1(Fraction fraction) {
+
         component1.setFraction(fraction);
     }
 
     public void setResult(Fraction fraction) {
+
         result.setFraction(fraction);
     }
 
