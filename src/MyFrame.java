@@ -1,16 +1,23 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.beans.PropertyChangeListener;
 
-public class MyFrame extends JFrame {
+public class MyFrame extends JFrame implements ActionListener {
     private Component1 component;
     private Component1 component1;
     private Component1 result;
 
     public MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(40, 40, 620, 460);
         JPanel panel = new JPanel();
-        JButton bResult = new JButton();
+        JButton bResult = new JButton("=");
         JButton bOperation = new JButton();
         panel.setLayout(null);
         panel.setBounds(10, 10, 125, 100);
@@ -21,11 +28,14 @@ public class MyFrame extends JFrame {
         this.component1 = component1;
         Component1 result = new Component1(panel, 350);
         this.result = result;
-        bOperation.setBounds(120,25,40,25);
-        bOperation.setText("*");
+        bOperation.setBounds(120, 23, 45, 25);
+        bOperation.setText("+");
         panel.add(bOperation);
-        bResult.setBounds(285,25,50,25);
+        bResult.setBounds(285, 25, 50, 25);
         bResult.setText(" = ");
+        bResult.setName("result");
+        bResult.setActionCommand("result");
+        bResult.addActionListener(this);
         panel.add(bResult);
 
         setVisible(true);
@@ -46,4 +56,15 @@ public class MyFrame extends JFrame {
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println(e.getActionCommand());
+        Calculator calculator = new Calculator();
+        if ("result".equals(e.getActionCommand())) {
+            Fraction fractionresult = calculator.add(component.getFraction(), component1.getFraction());
+            System.out.println(component.getNumerous());
+            System.out.println(fractionresult.getDenominator() + " " + fractionresult.getNumerator());
+            result.setFraction(fractionresult);
+        }
+    }
 }
