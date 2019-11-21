@@ -16,7 +16,7 @@ public class Main {
         Fraction fraction3 = new Fraction(4, 8);
         window.setComponent(fraction3);
         window.setComponent1(fraction);
-        sumFraction = calculator.mul(fraction3, fraction);
+        sumFraction = calculator.div(fraction3, fraction);
         window.setResult(sumFraction);
 
 
