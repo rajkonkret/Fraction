@@ -44,7 +44,7 @@ public class Component1 implements PropertyChangeListener {
     }
 
     public Fraction getFraction() {
-        return new Fraction( Integer.parseInt(numerous1.getText()), Integer.parseInt(denumerator1.getText()));
+        return new Fraction(Integer.parseInt(numerous1.getText()), Integer.parseInt(denumerator1.getText()));
     }
 
     public void setFraction(Fraction fraction) {

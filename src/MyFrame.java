@@ -62,8 +62,6 @@ public class MyFrame extends JFrame implements ActionListener {
         Calculator calculator = new Calculator();
         if ("result".equals(e.getActionCommand())) {
             Fraction fractionresult = calculator.add(component.getFraction(), component1.getFraction());
-            System.out.println(component.getNumerous());
-            System.out.println(fractionresult.getDenominator() + " " + fractionresult.getNumerator());
             result.setFraction(fractionresult);
         }
     }
