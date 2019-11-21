@@ -10,6 +10,7 @@ public class MyFrame extends JFrame implements ActionListener {
     private Component1 component;
     private Component1 component1;
     private Component1 result;
+    private String operation;
 
     public MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
@@ -28,8 +29,9 @@ public class MyFrame extends JFrame implements ActionListener {
         this.component1 = component1;
         Component1 result = new Component1(panel, 350);
         this.result = result;
-        bOperation.setBounds(120, 23, 45, 25);
-        bOperation.setText("+");
+        bOperation.setBounds(120, 25, 45, 25);
+        bOperation.setText("-");
+        this.operation = bOperation.getText();
         panel.add(bOperation);
         bResult.setBounds(285, 25, 50, 25);
         bResult.setText(" = ");
@@ -63,8 +65,17 @@ public class MyFrame extends JFrame implements ActionListener {
 //        System.out.println(e.getActionCommand());
         Calculator calculator = new Calculator();
         if ("result".equals(e.getActionCommand())) {
-            Fraction fractionresult = calculator.add(component.getFraction(), component1.getFraction());
-            result.setFraction(fractionresult);
+            switch (operation) {
+
+                case "+": {
+                    Fraction fractionresult = calculator.add(component.getFraction(), component1.getFraction());
+                    result.setFraction(fractionresult);
+                }
+                case "-": {
+                    Fraction fractionresult = calculator.sub(component.getFraction(), component1.getFraction());
+                    result.setFraction(fractionresult);
+                }
+            }
         }
     }
 }
