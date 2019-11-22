@@ -1,3 +1,5 @@
+import javafx.stage.Screen;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
