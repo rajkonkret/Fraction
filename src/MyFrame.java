@@ -146,7 +146,7 @@ public class MyFrame extends JFrame implements ActionListener {
                 case "-": {
                     Fraction fractionResult = calculator.sub(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
-                    //result.setFraction(shorter(fractionResult));
+                    result.setFraction(shorter(fractionResult));
                     break;
                 }
                 case "*": {

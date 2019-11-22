@@ -1,3 +1,5 @@
+import javax.swing.plaf.nimbus.AbstractRegionPainter;
+
 public class Calculator {
 
     public Calculator() {
@@ -54,6 +56,14 @@ public class Calculator {
     }
 
     public int nwd(int firstN, int secondN) {
+
+        if (firstN==0){
+            firstN=1;
+        }
+
+        if (firstN < 0) {
+            firstN=Math.negateExact(firstN);
+        }
 
         while (firstN != secondN) {
             if (firstN > secondN) {
