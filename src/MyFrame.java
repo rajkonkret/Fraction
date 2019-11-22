@@ -17,7 +17,7 @@ public class MyFrame extends JFrame implements ActionListener {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(40, 40, 620, 460);
-        int bOperationsOffset=30;
+        int bOperationsOffset = 30;
 
         JPanel panel = new JPanel();
         JButton bResult = new JButton("=");
@@ -53,25 +53,25 @@ public class MyFrame extends JFrame implements ActionListener {
         bResult.addActionListener(this);
         panel.add(bResult);
 
-        bPlus.setBounds(105+bOperationsOffset, 75, 45, 25);
+        bPlus.setBounds(105 + bOperationsOffset, 75, 45, 25);
         bPlus.setText("+");
         bPlus.setActionCommand("+");
         bPlus.addActionListener(this);
         panel.add(bPlus);
 
-        bMinus.setBounds(150+bOperationsOffset, 75, 45, 25);
+        bMinus.setBounds(150 + bOperationsOffset, 75, 45, 25);
         bMinus.setText("-");
         bMinus.setActionCommand("-");
         bMinus.addActionListener(this);
         panel.add(bMinus);
 
-        bDiv.setBounds(195+bOperationsOffset, 75, 45, 25);
+        bDiv.setBounds(195 + bOperationsOffset, 75, 45, 25);
         bDiv.setText(":");
         bDiv.setActionCommand(":");
         bDiv.addActionListener(this);
         panel.add(bDiv);
 
-        bMuls.setBounds(240+bOperationsOffset, 75, 45, 25);
+        bMuls.setBounds(240 + bOperationsOffset, 75, 45, 25);
         bMuls.setText("*");
         bMuls.setActionCommand("*");
         bMuls.addActionListener(this);
@@ -116,7 +116,8 @@ public class MyFrame extends JFrame implements ActionListener {
             this.operation = ":";
             this.bOperation.setText(":");
 
-        } if ("*".equals((e.getActionCommand()))) {
+        }
+        if ("*".equals((e.getActionCommand()))) {
             this.operation = "*";
             this.bOperation.setText("*");
         }
