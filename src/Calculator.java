@@ -20,8 +20,8 @@ public class Calculator {
             numerator = first.getNumerator() - second.getNumerator();
             denominator = first.getDenominator();
         }
-        Fraction add = new Fraction(numerator, denominator);
-        return add;
+        Fraction sub = new Fraction(numerator, denominator);
+        return sub;
     }
 
     public Fraction mul(Fraction first, Fraction second) {
@@ -31,8 +31,8 @@ public class Calculator {
             numerator = first.getNumerator() * second.getNumerator();
             denominator = first.getDenominator() * second.getDenominator();
         }
-        Fraction add = new Fraction(numerator, denominator);
-        return add;
+        Fraction mul = new Fraction(numerator, denominator);
+        return mul;
     }
 
     public Fraction div(Fraction first, Fraction second) {
@@ -42,7 +42,7 @@ public class Calculator {
             numerator = first.getNumerator() * second.getDenominator();
             denominator = first.getDenominator() * second.getNumerator();
         }
-        Fraction add = new Fraction(numerator, denominator);
-        return add;
+        Fraction div = new Fraction(numerator, denominator);
+        return div;
     }
 }

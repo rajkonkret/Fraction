@@ -15,9 +15,9 @@ public class MyFrame extends JFrame implements ActionListener {
 
     public MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(40, 40, 620, 460);
+        int bOperationsOffset=30;
 
         JPanel panel = new JPanel();
         JButton bResult = new JButton("=");
@@ -34,7 +34,7 @@ public class MyFrame extends JFrame implements ActionListener {
         Component1 component = new Component1(panel, 10);
         this.component = component;
 
-        Component1 component1 = new Component1(panel, 170);
+        Component1 component1 = new Component1(panel, 175);
         this.component1 = component1;
 
         Component1 result = new Component1(panel, 350);
@@ -53,25 +53,25 @@ public class MyFrame extends JFrame implements ActionListener {
         bResult.addActionListener(this);
         panel.add(bResult);
 
-        bPlus.setBounds(105, 75, 45, 25);
+        bPlus.setBounds(105+bOperationsOffset, 75, 45, 25);
         bPlus.setText("+");
         bPlus.setActionCommand("+");
         bPlus.addActionListener(this);
         panel.add(bPlus);
 
-        bMinus.setBounds(150, 75, 45, 25);
+        bMinus.setBounds(150+bOperationsOffset, 75, 45, 25);
         bMinus.setText("-");
         bMinus.setActionCommand("-");
         bMinus.addActionListener(this);
         panel.add(bMinus);
 
-        bDiv.setBounds(195, 75, 45, 25);
+        bDiv.setBounds(195+bOperationsOffset, 75, 45, 25);
         bDiv.setText(":");
         bDiv.setActionCommand(":");
         bDiv.addActionListener(this);
         panel.add(bDiv);
 
-        bMuls.setBounds(240, 75, 45, 25);
+        bMuls.setBounds(240+bOperationsOffset, 75, 45, 25);
         bMuls.setText("*");
         bMuls.setActionCommand("*");
         bMuls.addActionListener(this);
@@ -101,13 +101,24 @@ public class MyFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 //        System.out.println(e.getActionCommand());
         Calculator calculator = new Calculator();
+
         if ("+".equals((e.getActionCommand()))) {
             this.operation = "+";
             this.bOperation.setText("+");
         }
+
         if ("-".equals((e.getActionCommand()))) {
             this.operation = "-";
             this.bOperation.setText("-");
+        }
+
+        if (":".equals((e.getActionCommand()))) {
+            this.operation = ":";
+            this.bOperation.setText(":");
+
+        } if ("*".equals((e.getActionCommand()))) {
+            this.operation = "*";
+            this.bOperation.setText("*");
         }
 
         if ("result".equals(e.getActionCommand())) {
@@ -120,6 +131,16 @@ public class MyFrame extends JFrame implements ActionListener {
                 }
                 case "-": {
                     Fraction fractionresult = calculator.sub(component.getFraction(), component1.getFraction());
+                    result.setFraction(fractionresult);
+                    break;
+                }
+                case "*": {
+                    Fraction fractionresult = calculator.mul(component.getFraction(), component1.getFraction());
+                    result.setFraction(fractionresult);
+                    break;
+                }
+                case ":": {
+                    Fraction fractionresult = calculator.div(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionresult);
                     break;
                 }
