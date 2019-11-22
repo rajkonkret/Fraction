@@ -12,13 +12,14 @@ public class MyFrame extends JFrame implements ActionListener {
     private Component1 component;
     private Component1 component1;
     private Component1 result;
+    private Component1 resultShort;
     private String operation;
     private JButton bOperation;
 
     public MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(150, 100, 620, 460);
+        setBounds(200, 100, 620, 240);
         int bOperationsOffset = 30;
 
         JPanel panel = new JPanel();
@@ -41,6 +42,9 @@ public class MyFrame extends JFrame implements ActionListener {
 
         Component1 result = new Component1(panel, 350);
         this.result = result;
+
+        Component1 resultShort = new Component1(panel, 460);
+        this.resultShort = resultShort;
 
         bOperation.setBounds(120, 25, 45, 25);
         bOperation.setText("-");
@@ -140,25 +144,25 @@ public class MyFrame extends JFrame implements ActionListener {
                     //                 nwd.nwd(fractionresult.getNumerator(), fractionresult.getDenominator());
 //                    int resultShorter = calculator.nwd(fractionResult.getNumerator(), fractionResult.getDenominator());
 //                    Fraction fractionResultShort = new Fraction(fractionResult.getNumerator() / resultShorter, fractionResult.getDenominator() / resultShorter);
-                    result.setFraction(shorter(fractionResult));
+                    resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
                 case "-": {
                     Fraction fractionResult = calculator.sub(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
-                    result.setFraction(shorter(fractionResult));
+                    resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
                 case "*": {
                     Fraction fractionResult = calculator.mul(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
-                    result.setFraction(shorter(fractionResult));
+                    resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
                 case ":": {
                     Fraction fractionResult = calculator.div(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
-                    result.setFraction(shorter(fractionResult));
+                    resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
             }
