@@ -130,6 +130,8 @@ public class MyFrame extends JFrame implements ActionListener {
                 case "+": {
                     Fraction fractionresult = calculator.add(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionresult);
+                    Nwd nwd = new Nwd();
+                    nwd.nwd(fractionresult.getNumerator(), fractionresult.getDenominator());
                     break;
                 }
                 case "-": {

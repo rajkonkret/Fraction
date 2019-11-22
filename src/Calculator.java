@@ -43,8 +43,6 @@ public class Calculator {
             denominator = first.getDenominator() * second.getNumerator();
         }
         Fraction div = new Fraction(numerator, denominator);
-        Nwd nwd = new Nwd();
-        nwd.nwd(div.getNumerator(), div.getDenominator());
         return div;
     }
 }
