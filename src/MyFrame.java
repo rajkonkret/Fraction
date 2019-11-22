@@ -11,6 +11,7 @@ public class MyFrame extends JFrame implements ActionListener {
     private Component1 component1;
     private Component1 result;
     private String operation;
+    private JButton bOperation;
 
     public MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
@@ -20,6 +21,10 @@ public class MyFrame extends JFrame implements ActionListener {
         JPanel panel = new JPanel();
         JButton bResult = new JButton("=");
         JButton bOperation = new JButton();
+        JButton bPlus = new JButton();
+        JButton bMinus = new JButton();
+        JButton bDiv = new JButton();
+        JButton bMuls = new JButton();
         panel.setLayout(null);
         panel.setBounds(10, 10, 125, 100);
         add(panel);
@@ -32,6 +37,7 @@ public class MyFrame extends JFrame implements ActionListener {
         bOperation.setBounds(120, 25, 45, 25);
         bOperation.setText("-");
         this.operation = bOperation.getText();
+        this.bOperation = bOperation;
         panel.add(bOperation);
         bResult.setBounds(285, 25, 50, 25);
         bResult.setText(" = ");
@@ -39,6 +45,20 @@ public class MyFrame extends JFrame implements ActionListener {
         bResult.setActionCommand("result");
         bResult.addActionListener(this);
         panel.add(bResult);
+        bPlus.setBounds(105, 75, 45, 25);
+        bPlus.setText("+");
+        panel.add(bPlus);
+        bMinus.setBounds(150, 75, 45, 25);
+        bMinus.setText("-");
+        panel.add(bMinus);
+        bDiv.setBounds(195, 75, 45, 25);
+        bDiv.setText(":");
+        panel.add(bDiv);
+        bMuls.setBounds(240, 75, 45, 25);
+        bMuls.setText("*");
+        panel.add(bMuls);
+
+
 
         setVisible(true);
 
