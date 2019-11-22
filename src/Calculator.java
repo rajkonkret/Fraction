@@ -1,4 +1,5 @@
 public class Calculator {
+
     public Calculator() {
     }
 
@@ -8,6 +9,9 @@ public class Calculator {
         if (second.getDenominator() == first.getDenominator()) {
             numerator = first.getNumerator() + second.getNumerator();
             denominator = first.getDenominator();
+        } else {
+            denominator = first.getDenominator() * second.getDenominator();
+            numerator = denominator / first.getDenominator() * first.getNumerator() + denominator / second.getDenominator() * second.getNumerator();
         }
         Fraction add = new Fraction(numerator, denominator);
         return add;
@@ -19,6 +23,9 @@ public class Calculator {
         if (second.getDenominator() == first.getDenominator()) {
             numerator = first.getNumerator() - second.getNumerator();
             denominator = first.getDenominator();
+        } else {
+            denominator = first.getDenominator() * second.getDenominator();
+            numerator = denominator / first.getDenominator() * first.getNumerator() - denominator / second.getDenominator() * second.getNumerator();
         }
         Fraction sub = new Fraction(numerator, denominator);
         return sub;
@@ -44,5 +51,20 @@ public class Calculator {
         }
         Fraction div = new Fraction(numerator, denominator);
         return div;
+    }
+
+    public int nwd(int firstN, int secondN) {
+
+        while (firstN != secondN) {
+            if (firstN > secondN) {
+                firstN -= secondN;
+                //System.out.println(firstN);
+            } else {
+                secondN -= firstN;
+                //System.out.println(secondN);
+            }
+        }
+        System.out.println("wynosi: " + firstN);
+        return firstN;
     }
 }
