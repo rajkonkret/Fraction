@@ -62,11 +62,6 @@ public class Component1 implements PropertyChangeListener {
             //System.out.println("ok");
         }
     }
-
-//    @Override
-//    public void propertyChange(PropertyChangeEvent evt) {
-//        Object source = evt.getSource();
-//    }
 }
 
 
