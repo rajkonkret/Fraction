@@ -12,7 +12,7 @@ public class Calculator {
             numerator = first.getNumerator() + second.getNumerator();
             denominator = first.getDenominator();
         } else {
-            denominator = first.getDenominator() * second.getDenominator();
+            denominator = first.getDenominator() * second.getDenominator()/nwd(first.getDenominator(),second.getDenominator());
             numerator = denominator / first.getDenominator() * first.getNumerator() + denominator / second.getDenominator() * second.getNumerator();
         }
         Fraction add = new Fraction(numerator, denominator);
@@ -26,7 +26,7 @@ public class Calculator {
             numerator = first.getNumerator() - second.getNumerator();
             denominator = first.getDenominator();
         } else {
-            denominator = first.getDenominator() * second.getDenominator();
+            denominator = first.getDenominator() * second.getDenominator()/nwd(first.getDenominator(),second.getDenominator());
             numerator = denominator / first.getDenominator() * first.getNumerator() - denominator / second.getDenominator() * second.getNumerator();
         }
         Fraction sub = new Fraction(numerator, denominator);
