@@ -1,13 +1,11 @@
-import javax.swing.plaf.nimbus.AbstractRegionPainter;
-
 class Calculator {
 
     Calculator() {
     }
 
-    Fraction add(Fraction first, Fraction second) {
-        int numerator = 0;
-        int denominator = 1;
+    Fraction addFraction(Fraction first, Fraction second) {
+        int numerator;
+        int denominator;
         if (second.getDenominator() == first.getDenominator()) {
             numerator = first.getNumerator() + second.getNumerator();
             denominator = first.getDenominator();
@@ -15,13 +13,12 @@ class Calculator {
             denominator = first.getDenominator() * second.getDenominator() / nwd(first.getDenominator(), second.getDenominator());
             numerator = denominator / first.getDenominator() * first.getNumerator() + denominator / second.getDenominator() * second.getNumerator();
         }
-        Fraction add = new Fraction(numerator, denominator);
-        return add;
+        return new Fraction(numerator, denominator);
     }
 
-    Fraction sub(Fraction first, Fraction second) {
-        int numerator = 0;
-        int denominator = 1;
+    Fraction subFraction(Fraction first, Fraction second) {
+        int numerator;
+        int denominator;
         if (second.getDenominator() == first.getDenominator()) {
             numerator = first.getNumerator() - second.getNumerator();
             denominator = first.getDenominator();
@@ -29,30 +26,27 @@ class Calculator {
             denominator = first.getDenominator() * second.getDenominator() / nwd(first.getDenominator(), second.getDenominator());
             numerator = denominator / first.getDenominator() * first.getNumerator() - denominator / second.getDenominator() * second.getNumerator();
         }
-        Fraction sub = new Fraction(numerator, denominator);
-        return sub;
+        return new Fraction(numerator, denominator);
     }
 
-    Fraction mul(Fraction first, Fraction second) {
+    Fraction mulFraction(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
             numerator = first.getNumerator() * second.getNumerator();
             denominator = first.getDenominator() * second.getDenominator();
         }
-        Fraction mul = new Fraction(numerator, denominator);
-        return mul;
+        return new Fraction(numerator, denominator);
     }
 
-    Fraction div(Fraction first, Fraction second) {
+    Fraction divFraction(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
             numerator = first.getNumerator() * second.getDenominator();
             denominator = first.getDenominator() * second.getNumerator();
         }
-        Fraction div = new Fraction(numerator, denominator);
-        return div;
+        return new Fraction(numerator, denominator);
     }
 
     int nwd(int firstN, int secondN) {

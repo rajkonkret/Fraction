@@ -1,12 +1,6 @@
-import javafx.stage.Screen;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.beans.PropertyChangeListener;
 
 public class MyFrame extends JFrame implements ActionListener {
     private Component1 component;
@@ -34,17 +28,13 @@ public class MyFrame extends JFrame implements ActionListener {
         panel.setBounds(10, 10, 125, 100);
         add(panel);
 
-        Component1 component = new Component1(panel, 10);
-        this.component = component;
+        this.component = new Component1(panel, 10);
 
-        Component1 component1 = new Component1(panel, 175);
-        this.component1 = component1;
+        this.component1 = new Component1(panel, 175);
 
-        Component1 result = new Component1(panel, 350);
-        this.result = result;
+        this.result = new Component1(panel, 350);
 
-        Component1 resultShort = new Component1(panel, 460);
-        this.resultShort = resultShort;
+        this.resultShort = new Component1(panel, 460);
 
         bOperation.setBounds(120, 25, 45, 25);
         bOperation.setText("-");
@@ -88,21 +78,22 @@ public class MyFrame extends JFrame implements ActionListener {
 
     }
 
-    public void setComponent(Fraction fraction) {
+    void setComponent(Fraction fraction) {
+
         component.setFraction(fraction);
     }
 
-    public void setComponent1(Fraction fraction) {
+    void setComponent1(Fraction fraction) {
 
         component1.setFraction(fraction);
     }
 
-    public void setResult(Fraction fraction) {
+    void setResult(Fraction fraction) {
 
         result.setFraction(fraction);
     }
 
-    public Fraction shorter(Fraction result) {
+    private Fraction shorter(Fraction result) {
         Calculator calculator = new Calculator();
         int resultShorter = calculator.nwd(result.getNumerator(), result.getDenominator());
         Fraction fractionResultShort = new Fraction(result.getNumerator() / resultShorter, result.getDenominator() / resultShorter);
@@ -138,25 +129,25 @@ public class MyFrame extends JFrame implements ActionListener {
             switch (this.bOperation.getText()) {
 
                 case "+": {
-                    Fraction fractionResult = calculator.add(component.getFraction(), component1.getFraction());
+                    Fraction fractionResult = calculator.addFraction(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
                     resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
                 case "-": {
-                    Fraction fractionResult = calculator.sub(component.getFraction(), component1.getFraction());
+                    Fraction fractionResult = calculator.subFraction(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
                     resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
                 case "*": {
-                    Fraction fractionResult = calculator.mul(component.getFraction(), component1.getFraction());
+                    Fraction fractionResult = calculator.mulFraction(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
                     resultShort.setFraction(shorter(fractionResult));
                     break;
                 }
                 case ":": {
-                    Fraction fractionResult = calculator.div(component.getFraction(), component1.getFraction());
+                    Fraction fractionResult = calculator.divFraction(component.getFraction(), component1.getFraction());
                     result.setFraction(fractionResult);
                     resultShort.setFraction(shorter(fractionResult));
                     break;
