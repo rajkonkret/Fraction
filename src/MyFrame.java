@@ -16,7 +16,7 @@ public class MyFrame extends JFrame implements ActionListener {
     private String operation;
     private JButton bOperation;
 
-    public MyFrame() {
+    MyFrame() {
         super("Fraction by RAJ ver 0.0.0.0.0.0.0.0.0000.00000.000001");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(200, 100, 620, 240);

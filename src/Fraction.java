@@ -1,18 +1,18 @@
-public class Fraction {
+class Fraction {
     private int numerator;
     private int denominator;
 
-    public Fraction(int numerator, int denominator) {
+    Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
 
 
-    public int getNumerator() {
+    int getNumerator() {
         return numerator;
     }
 
-    public int getDenominator() {
+    int getDenominator() {
         return denominator;
     }
 }

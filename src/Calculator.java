@@ -1,11 +1,11 @@
 import javax.swing.plaf.nimbus.AbstractRegionPainter;
 
-public class Calculator {
+class Calculator {
 
-    public Calculator() {
+    Calculator() {
     }
 
-    public Fraction add(Fraction first, Fraction second) {
+    Fraction add(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (second.getDenominator() == first.getDenominator()) {
@@ -19,7 +19,7 @@ public class Calculator {
         return add;
     }
 
-    public Fraction sub(Fraction first, Fraction second) {
+    Fraction sub(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (second.getDenominator() == first.getDenominator()) {
@@ -33,7 +33,7 @@ public class Calculator {
         return sub;
     }
 
-    public Fraction mul(Fraction first, Fraction second) {
+    Fraction mul(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
@@ -44,7 +44,7 @@ public class Calculator {
         return mul;
     }
 
-    public Fraction div(Fraction first, Fraction second) {
+    Fraction div(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
@@ -55,7 +55,7 @@ public class Calculator {
         return div;
     }
 
-    public int nwd(int firstN, int secondN) {
+    int nwd(int firstN, int secondN) {
 
         if (firstN == 0) {
             firstN = 1;
