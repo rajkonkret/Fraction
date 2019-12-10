@@ -24,6 +24,7 @@ public class MyFrame extends JFrame implements ActionListener {
         JButton bMuls = new JButton();
 
         panel.setLayout(null);
+
         panel.setBounds(10, 10, 125, 100);
         add(panel);
 
@@ -71,8 +72,10 @@ public class MyFrame extends JFrame implements ActionListener {
 
     private Fraction shorter(Fraction result) {
         Calculator calculator = new Calculator();
+
         int resultShorter = calculator.nwd(result.getNumerator(), result.getDenominator());
-        return new Fraction(result.getNumerator() / resultShorter, result.getDenominator() / resultShorter);
+        return new Fraction(result.getNumerator() / resultShorter,
+                result.getDenominator() / resultShorter);
     }
 
     @Override
