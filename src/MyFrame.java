@@ -7,7 +7,7 @@ public class MyFrame extends JFrame implements ActionListener {
     private Component1 component1;
     private Component1 result;
     private Component1 resultShort;
-    private String operation;
+   // private String operation;
     private JButton bOperation;
 
     MyFrame() {
@@ -38,7 +38,7 @@ public class MyFrame extends JFrame implements ActionListener {
 
         bOperation.setBounds(120, 25, 45, 25);
         bOperation.setText("-");
-        this.operation = bOperation.getText();
+        //this.operation = bOperation.getText();
         this.bOperation = bOperation;
         panel.add(bOperation);
 
@@ -54,15 +54,19 @@ public class MyFrame extends JFrame implements ActionListener {
 //        bPlus.setActionCommand("+");
 //        bPlus.addActionListener(this);
         bPlus.addActionListener(action -> {
-                operation = "+";
-                bOperation.setText("+");
+            //operation = "+";
+            bOperation.setText("+");
         });
         panel.add(bPlus);
 
         bMinus.setBounds(150 + bOperationsOffset, 75, 45, 25);
         bMinus.setText("-");
-        bMinus.setActionCommand("-");
-        bMinus.addActionListener(this);
+//        bMinus.setActionCommand("-");
+//        bMinus.addActionListener(this);
+        bMinus.addActionListener(action -> {
+           // operation = "-";
+            bOperation.setText("-");
+        });
         panel.add(bMinus);
 
         bDiv.setBounds(195 + bOperationsOffset, 75, 45, 25);
@@ -114,18 +118,18 @@ public class MyFrame extends JFrame implements ActionListener {
 //            this.bOperation.setText("+");
 //        }
 
-        if ("-".equals((e.getActionCommand()))) {
-            this.operation = "-";
-            this.bOperation.setText("-");
-        }
+//        if ("-".equals((e.getActionCommand()))) {
+//            this.operation = "-";
+//            this.bOperation.setText("-");
+//        }
 
         if (":".equals((e.getActionCommand()))) {
-            this.operation = ":";
+          //  this.operation = ":";
             this.bOperation.setText(":");
 
         }
         if ("*".equals((e.getActionCommand()))) {
-            this.operation = "*";
+         //   this.operation = "*";
             this.bOperation.setText("*");
         }
 
