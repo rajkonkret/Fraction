@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class Component1 implements PropertyChangeListener {
+class Component1 implements PropertyChangeListener {
     private int numerous;
     private int denumerator;
     private JTextField numerous1;
@@ -58,10 +58,6 @@ public class Component1 implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        Object source = evt.getSource();
-        if (source == numerous1) {
-            System.out.println("ok");
-        }
     }
 }
 

@@ -51,8 +51,12 @@ public class MyFrame extends JFrame implements ActionListener {
 
         bPlus.setBounds(105 + bOperationsOffset, 75, 45, 25);
         bPlus.setText("+");
-        bPlus.setActionCommand("+");
-        bPlus.addActionListener(this);
+//        bPlus.setActionCommand("+");
+//        bPlus.addActionListener(this);
+        bPlus.addActionListener(action -> {
+                operation = "+";
+                bOperation.setText("+");
+        });
         panel.add(bPlus);
 
         bMinus.setBounds(150 + bOperationsOffset, 75, 45, 25);
@@ -105,10 +109,10 @@ public class MyFrame extends JFrame implements ActionListener {
 //        System.out.println(e.getActionCommand());
         Calculator calculator = new Calculator();
 
-        if ("+".equals((e.getActionCommand()))) {
-            this.operation = "+";
-            this.bOperation.setText("+");
-        }
+//        if ("+".equals((e.getActionCommand()))) {
+//            this.operation = "+";
+//            this.bOperation.setText("+");
+//        }
 
         if ("-".equals((e.getActionCommand()))) {
             this.operation = "-";
