@@ -7,7 +7,6 @@ public class MyFrame extends JFrame implements ActionListener {
     private Component1 component1;
     private Component1 result;
     private Component1 resultShort;
-   // private String operation;
     private JButton bOperation;
 
     MyFrame() {
@@ -29,16 +28,12 @@ public class MyFrame extends JFrame implements ActionListener {
         add(panel);
 
         this.component = new Component1(panel, 10);
-
         this.component1 = new Component1(panel, 175);
-
         this.result = new Component1(panel, 350);
-
         this.resultShort = new Component1(panel, 460);
 
         bOperation.setBounds(120, 25, 45, 25);
         bOperation.setText("-");
-        //this.operation = bOperation.getText();
         this.bOperation = bOperation;
         panel.add(bOperation);
 
@@ -51,35 +46,21 @@ public class MyFrame extends JFrame implements ActionListener {
 
         bPlus.setBounds(105 + bOperationsOffset, 75, 45, 25);
         bPlus.setText("+");
-//        bPlus.setActionCommand("+");
-//        bPlus.addActionListener(this);
-        bPlus.addActionListener(action -> {
-            //operation = "+";
-            bOperation.setText("+");
-        });
+        bPlus.addActionListener(action -> bOperation.setText("+"));
         panel.add(bPlus);
 
         bMinus.setBounds(150 + bOperationsOffset, 75, 45, 25);
         bMinus.setText("-");
-//        bMinus.setActionCommand("-");
-//        bMinus.addActionListener(this);
-        bMinus.addActionListener(action -> {
-           // operation = "-";
-            bOperation.setText("-");
-        });
+        bMinus.addActionListener(action -> bOperation.setText("-"));
         panel.add(bMinus);
 
         bDiv.setBounds(195 + bOperationsOffset, 75, 45, 25);
         bDiv.setText(":");
-//        bDiv.setActionCommand(":");
-//        bDiv.addActionListener(this);
         bDiv.addActionListener(action -> bOperation.setText(":"));
         panel.add(bDiv);
 
         bMuls.setBounds(240 + bOperationsOffset, 75, 45, 25);
         bMuls.setText("*");
-//        bMuls.setActionCommand("*");
-//        bMuls.addActionListener(this);
         bMuls.addActionListener(action -> bOperation.setText("*"));
         panel.add(bMuls);
 
@@ -88,52 +69,15 @@ public class MyFrame extends JFrame implements ActionListener {
 
     }
 
-    void setComponent(Fraction fraction) {
-
-        component.setFraction(fraction);
-    }
-
-    void setComponent1(Fraction fraction) {
-
-        component1.setFraction(fraction);
-    }
-
-    void setResult(Fraction fraction) {
-
-        result.setFraction(fraction);
-    }
-
     private Fraction shorter(Fraction result) {
         Calculator calculator = new Calculator();
         int resultShorter = calculator.nwd(result.getNumerator(), result.getDenominator());
-        Fraction fractionResultShort = new Fraction(result.getNumerator() / resultShorter, result.getDenominator() / resultShorter);
-        return fractionResultShort;
+        return new Fraction(result.getNumerator() / resultShorter, result.getDenominator() / resultShorter);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-//        System.out.println(e.getActionCommand());
         Calculator calculator = new Calculator();
-
-//        if ("+".equals((e.getActionCommand()))) {
-//            this.operation = "+";
-//            this.bOperation.setText("+");
-//        }
-
-//        if ("-".equals((e.getActionCommand()))) {
-//            this.operation = "-";
-//            this.bOperation.setText("-");
-//        }
-
-//        if (":".equals((e.getActionCommand()))) {
-//          //  this.operation = ":";
-//            this.bOperation.setText(":");
-//
-//        }
-//        if ("*".equals((e.getActionCommand()))) {
-//         //   this.operation = "*";
-//            this.bOperation.setText("*");
-//        }
 
         if ("result".equals(e.getActionCommand())) {
             switch (this.bOperation.getText()) {

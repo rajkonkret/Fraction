@@ -6,6 +6,7 @@ class Calculator {
     Fraction addFraction(Fraction first, Fraction second) {
         int numerator;
         int denominator;
+
         if (second.getDenominator() == first.getDenominator()) {
             numerator = first.getNumerator() + second.getNumerator();
             denominator = first.getDenominator();
@@ -19,6 +20,7 @@ class Calculator {
     Fraction subFraction(Fraction first, Fraction second) {
         int numerator;
         int denominator;
+
         if (second.getDenominator() == first.getDenominator()) {
             numerator = first.getNumerator() - second.getNumerator();
             denominator = first.getDenominator();
@@ -32,6 +34,7 @@ class Calculator {
     Fraction mulFraction(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
+
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
             numerator = first.getNumerator() * second.getNumerator();
             denominator = first.getDenominator() * second.getDenominator();
@@ -42,6 +45,7 @@ class Calculator {
     Fraction divFraction(Fraction first, Fraction second) {
         int numerator = 0;
         int denominator = 1;
+
         if (first.getDenominator() != 0 && second.getDenominator() != 0) {
             numerator = first.getNumerator() * second.getDenominator();
             denominator = first.getDenominator() * second.getNumerator();
@@ -62,10 +66,8 @@ class Calculator {
         while (firstN != secondN) {
             if (firstN > secondN) {
                 firstN -= secondN;
-                //System.out.println(firstN);
             } else {
                 secondN -= firstN;
-                //System.out.println(secondN);
             }
         }
         System.out.println("wynosi: " + firstN);
