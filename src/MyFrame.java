@@ -71,14 +71,16 @@ public class MyFrame extends JFrame implements ActionListener {
 
         bDiv.setBounds(195 + bOperationsOffset, 75, 45, 25);
         bDiv.setText(":");
-        bDiv.setActionCommand(":");
-        bDiv.addActionListener(this);
+//        bDiv.setActionCommand(":");
+//        bDiv.addActionListener(this);
+        bDiv.addActionListener(action -> bOperation.setText(":"));
         panel.add(bDiv);
 
         bMuls.setBounds(240 + bOperationsOffset, 75, 45, 25);
         bMuls.setText("*");
-        bMuls.setActionCommand("*");
-        bMuls.addActionListener(this);
+//        bMuls.setActionCommand("*");
+//        bMuls.addActionListener(this);
+        bMuls.addActionListener(action -> bOperation.setText("*"));
         panel.add(bMuls);
 
         setVisible(true);
@@ -123,15 +125,15 @@ public class MyFrame extends JFrame implements ActionListener {
 //            this.bOperation.setText("-");
 //        }
 
-        if (":".equals((e.getActionCommand()))) {
-          //  this.operation = ":";
-            this.bOperation.setText(":");
-
-        }
-        if ("*".equals((e.getActionCommand()))) {
-         //   this.operation = "*";
-            this.bOperation.setText("*");
-        }
+//        if (":".equals((e.getActionCommand()))) {
+//          //  this.operation = ":";
+//            this.bOperation.setText(":");
+//
+//        }
+//        if ("*".equals((e.getActionCommand()))) {
+//         //   this.operation = "*";
+//            this.bOperation.setText("*");
+//        }
 
         if ("result".equals(e.getActionCommand())) {
             switch (this.bOperation.getText()) {
